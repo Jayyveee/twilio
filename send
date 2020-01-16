@@ -1,0 +1,13 @@
+# For sending messages to the registered phon number
+
+from twilio.rest import Client          #TwilioRestClient is no longer supported
+
+account = "acount_SID"                  # acts as username 
+auth_token = "Authentication_token"     # acts as password
+client = Client(account, auth_token)
+
+twilio_number = 'xxxxxxxxx'
+my_number = '+xxxxxxxx'
+
+message = client.messages.create(to=my_number, from_=twilio_number,body="Testing the code")
+print(message)
